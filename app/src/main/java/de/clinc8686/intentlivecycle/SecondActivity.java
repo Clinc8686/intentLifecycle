@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,5 +23,14 @@ public class SecondActivity extends Activity {
         }
 
         receivedTextfield.setText(receivedString);
+    }
+
+    public void sendText(View view) {
+        TextView sendingText = (TextView) findViewById(R.id.receivedText);
+        String sendingTextString = sendingText.getText().toString();
+        Intent mainActivityIntent = new Intent();
+        mainActivityIntent.putExtra("extraString", sendingTextString);
+        setResult(RESULT_OK, mainActivityIntent);
+        finish();
     }
 }

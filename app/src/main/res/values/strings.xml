@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">intentLifecycle</string>
-    <string name="startActivity">Send</string>
+    <string name="startActivitySecond">Send to second</string>
+    <string name="sendBack">Send Back to Main</string>
 </resources>
