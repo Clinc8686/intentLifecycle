@@ -42,7 +42,14 @@ public class MainActivity extends AppCompatActivity {
         EditText receivedTextfield = findViewById(R.id.intentText);
 
         Intent receiver = getIntent();
-        String receivedString = data.getStringExtra("extraString");
+        String receivedString = "";
+        try {
+            receivedString = data.getStringExtra("extraString");
+        } catch (NullPointerException e){
+            resultText.setText("Exception! Back Button gedrückt.");
+            return;
+        }
+
         if (receivedString.length() == 0) {
             resultText.setText("empty String!");
         }
