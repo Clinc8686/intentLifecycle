@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Hier wäre es besser auf null/empty zu prüfen, statt in der second_Activity. Dann könnte man direkt den passende string übertragen, ob leer ist
+    //Hier wäre es besser auf null/empty zu prüfen, statt in der second_Activity. Dann könnte man direkt den passenden string übertragen, ob leer ist - check
     public void sendText(View view) {
         TextView sendingText = (TextView) findViewById(R.id.intentText);
         String sendingTextString = sendingText.getText().toString();
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         EditText receivedTextfield = findViewById(R.id.intentText);
 
-        Intent receiver = getIntent();
         String receivedString = "";
         try {
             receivedString = data.getStringExtra("extraString");
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         receivedTextfield.setText(receivedString);
     }
+    //Widerherstellen beim drehen des Bildschirms mit onSaveInstanceState und onRestoreInstanceState
 
     @Override
     protected void onStart() {
